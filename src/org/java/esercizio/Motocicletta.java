@@ -25,7 +25,7 @@ import java.time.LocalDate;
 public class Motocicletta extends Veicoli {
     private boolean cavalletto;
 
-    public Motocicletta(String numeroDiTarga, LocalDate dataImmatricolazione) {
+    public Motocicletta(String numeroDiTarga, LocalDate dataImmatricolazione, boolean cavalletto) {
         super(numeroDiTarga, dataImmatricolazione);
         this.cavalletto = cavalletto;
     }
