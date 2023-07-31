@@ -23,7 +23,7 @@ import java.time.LocalDate;
 public class Automobile extends Veicoli {
     private int numeroPorte;
 
-    public Automobile (String numeroDiTarga, LocalDate dataImmatricolazione){
+    public Automobile (String numeroDiTarga, LocalDate dataImmatricolazione, int numeroPorte){
         super(numeroDiTarga,dataImmatricolazione);
         this.numeroPorte = numeroPorte;
     }

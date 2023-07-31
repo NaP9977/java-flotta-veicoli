@@ -19,5 +19,25 @@
 
 package org.java.esercizio;
 
+import java.time.LocalDate;
+import java.util.Scanner;
+
 public class Main {
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        System.out.println("Scrivi il numero di targa");
+        String numeroTarga = scan.nextLine();
+
+        System.out.println("Scrivi la data di immatricolazione(AAAA-MM-DD)");
+        LocalDate dataImmatricolazione = LocalDate.parse(scan.nextLine());
+        System.out.println("Scrivi quante porte ha");
+        int numeroPorte = scan.nextInt();
+        Automobile automobile = new Automobile(numeroTarga,dataImmatricolazione,numeroPorte);
+
+
+
+
+
+
+    }
 }

@@ -34,24 +34,29 @@ public class GestoreFlotta {
         veicoli.add(veicolo);
     }
 
-    public int [] contaVeicolo( ){
-       int contaAuto = 0;
-       int contaMoto = 0;
+    public int contaVeicolo( Class < ? extends Veicoli> tipologiaVeicoli ){
+       int contatore = 0;
+
         for(Veicoli veicolo : veicoli) {
-            if (veicolo instanceof Automobile)
-                contaAuto++;
-            else if (veicolo instanceof Motocicletta)
-                contaMoto++;
-
+            if (tipologiaVeicoli.isInstance(veicolo))
+        contatore++;
         }
-        int[] risultato = { contaAuto, contaMoto };
-        return risultato;
+        return contatore;
+    }
 
+
+    public Veicoli TrovaVeicolo(String numeroDiTarga) {
+        for (Veicoli veicolo : veicoli) {
+            if (veicolo.getNumeroDiTarga().equals(numeroDiTarga)) {
+                return veicolo;
+            }
         }
 
-public Veicoli TrovaVeicolo(String NumeroDiTarga){
+            return null;
 
+    }
 }
 
 
-}
+
+
