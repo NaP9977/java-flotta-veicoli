@@ -27,12 +27,31 @@ public class GestoreFlotta {
     private ArrayList <Veicoli> veicoli;
 
     public GestoreFlotta(){
-        this.veicoli = new ArrayList<>();
+        this.veicoli = new ArrayList<Veicoli>();
     }
 
+    void CreazioneLista(Veicoli veicolo){
+        veicoli.add(veicolo);
+    }
 
+    public int [] contaVeicolo( ){
+       int contaAuto = 0;
+       int contaMoto = 0;
+        for(Veicoli veicolo : veicoli) {
+            if (veicolo instanceof Automobile)
+                contaAuto++;
+            else if (veicolo instanceof Motocicletta)
+                contaMoto++;
 
+        }
+        int[] risultato = { contaAuto, contaMoto };
+        return risultato;
 
+        }
+
+public Veicoli TrovaVeicolo(String NumeroDiTarga){
+
+}
 
 
 }
