@@ -32,30 +32,28 @@ public class Main {
         LocalDate dataImmatricolazione = LocalDate.parse(scan.nextLine());
         System.out.println("Scrivi quante porte ha");
         int numeroPorte = scan.nextInt();
-        Automobile automobile = new Automobile(numeroTarga,dataImmatricolazione,numeroPorte);
+        Automobile automobile = new Automobile(numeroTarga, dataImmatricolazione, numeroPorte);
         System.out.print("la motocicletta ha il cavalletto?");
-       boolean risposta = scan.nextBoolean();
-        Motocicletta motocicletta = new Motocicletta(numeroTarga,dataImmatricolazione,risposta);
-GestoreFlotta gestoreFlotta = new GestoreFlotta();
-gestoreFlotta.CreazioneLista(automobile);
-gestoreFlotta.CreazioneLista(motocicletta);
+        boolean risposta = scan.nextBoolean();
+        Motocicletta motocicletta = new Motocicletta(numeroTarga, dataImmatricolazione, risposta);
+        GestoreFlotta gestoreFlotta = new GestoreFlotta();
+        gestoreFlotta.CreazioneLista(automobile);
+        gestoreFlotta.CreazioneLista(motocicletta);
 
-int numAuto = gestoreFlotta.contaVeicolo(Automobile.class);
-int numMoto = gestoreFlotta.contaVeicolo(Motocicletta.class);
-System.out.println("Le auto sono" + numAuto);
-System.out.println("Le moto sono" + numMoto);
+        int numAuto = gestoreFlotta.contaVeicolo(Automobile.class);
+        int numMoto = gestoreFlotta.contaVeicolo(Motocicletta.class);
+        System.out.println("Le auto sono " + numAuto);
+        System.out.println("Le moto sono " + numMoto);
 
+        System.out.println("inserisci la targa da ricercare");
+        String TargaDaCercare = scan.nextLine();
+        Veicoli veicolo = gestoreFlotta.TrovaVeicolo(TargaDaCercare);
 
-System.out.println("inserisci la targa da ricercare");
-String TargaDaCercare = scan.nextLine();
-Veicoli veicolo = gestoreFlotta.TrovaVeicolo(TargaDaCercare);
- if(veicolo != null){
-     System.out.print ("Il veicolo è" + gestoreFlotta.getClass().getSimpleName());
- }
-else{
-    System.out.println("Veicolo non trovato");
- }
-
+        if (veicolo != null) {
+            System.out.print("Il veicolo è" + gestoreFlotta.getClass().getSimpleName());
+        } else {
+            System.out.println("Veicolo non trovato");
+        }
 
 
 
