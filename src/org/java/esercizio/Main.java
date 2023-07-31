@@ -31,7 +31,7 @@ public class Main {
         System.out.println("Scrivi la data di immatricolazione(AAAA-MM-DD)");
         LocalDate dataImmatricolazione = LocalDate.parse(scan.nextLine());
         System.out.println("Scrivi quante porte ha");
-        int numeroPorte = scan.nextInt();
+        int numeroPorte = Integer.parseInt(scan.nextLine());
         Automobile automobile = new Automobile(numeroTarga, dataImmatricolazione, numeroPorte);
         System.out.print("la motocicletta ha il cavalletto?");
         boolean risposta = scan.nextBoolean();
@@ -44,19 +44,15 @@ public class Main {
         int numMoto = gestoreFlotta.contaVeicolo(Motocicletta.class);
         System.out.println("Le auto sono " + numAuto);
         System.out.println("Le moto sono " + numMoto);
+        System.out.println("Inserisci la targa da ricercare");
+        String targaDaCercare = scan.next();
 
-        System.out.println("inserisci la targa da ricercare");
-        String TargaDaCercare = scan.nextLine();
-        Veicoli veicolo = gestoreFlotta.TrovaVeicolo(TargaDaCercare);
+        Veicoli veicolo = gestoreFlotta.TrovaVeicolo(targaDaCercare);
 
         if (veicolo != null) {
-            System.out.print("Il veicolo è" + gestoreFlotta.getClass().getSimpleName());
+            System.out.println("Il veicolo è " + veicolo.getClass().getSimpleName());
         } else {
-            System.out.println("Veicolo non trovato");
+            System.out.println("Veicolo non trovato con targa " + targaDaCercare);
         }
-
-
-
-
     }
 }
